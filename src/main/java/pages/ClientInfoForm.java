@@ -55,4 +55,8 @@ public class ClientInfoForm {
 
     }
 
+    public boolean checkErrorMessageDisplayed(String errorMessage) {
+        return driver.findElement(By.xpath(".//*[contains(text(), '" + errorMessage + "')]")).isDisplayed();
+    }
+
 }

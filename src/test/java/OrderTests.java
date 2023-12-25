@@ -2,7 +2,6 @@ import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.By;
 import pages.*;
 
 import static org.junit.Assert.assertTrue;
@@ -45,7 +44,7 @@ public class OrderTests extends Base {
             clientInfoForm.enterPhone(testData);
             clientInfoForm.clickNextButton();
 
-            assertTrue(driver.findElement(By.xpath(".//*[contains(text(), '" + errorMessage + "')]")).isDisplayed());
+            assertTrue(clientInfoForm.checkErrorMessageDisplayed(errorMessage));
         }
     }
 
